@@ -1,0 +1,128 @@
+.gallery {
+  min-height: 100dvh;
+  overflow: hidden;
+  padding: 72px 16px;
+  background: var(--white);
+}
+
+.petals {
+  position: absolute;
+  inset: 0;
+  opacity: 0.45;
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 960px);
+  margin: 0 auto 28px;
+  display: grid;
+  gap: 10px;
+  text-align: center;
+}
+
+.header p {
+  margin: 0;
+  color: var(--deep-rose);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.header h2 {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.5rem, 12vw, 4.6rem);
+  line-height: 0.94;
+}
+
+.toggle {
+  justify-self: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(201, 99, 122, 0.22);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--deep-rose);
+  background: var(--cream);
+}
+
+.carousel {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1020px);
+  margin: 0 auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(260px, 78vw);
+  gap: 18px;
+  overflow-x: auto;
+  padding: 12px 2px 28px;
+  scroll-snap-type: x mandatory;
+}
+
+.grid {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1020px);
+  margin: 0 auto;
+  display: grid;
+  gap: 18px;
+}
+
+.card {
+  scroll-snap-align: center;
+  padding: 12px 12px 18px;
+  border-radius: 20px;
+  background: rgba(255, 248, 240, 0.82);
+  box-shadow: 0 20px 60px rgba(201, 99, 122, 0.2);
+  transition: transform 350ms ease, box-shadow 350ms ease;
+}
+
+.card:hover {
+  transform: scale(1.03) rotate(1deg);
+  box-shadow: 0 25px 70px rgba(201, 99, 122, 0.28), 0 0 0 1px rgba(212, 175, 55, 0.42);
+}
+
+.photo {
+  aspect-ratio: 4 / 5;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.9);
+  background:
+    linear-gradient(145deg, rgba(201, 99, 122, 0.86), rgba(250, 218, 221, 0.78)),
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.5), transparent 34%);
+}
+
+.photo span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 5rem;
+  font-style: italic;
+}
+
+.card h3 {
+  margin: 16px 4px 6px;
+  color: var(--ink);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+}
+
+.card p {
+  margin: 0 4px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+@media (min-width: 760px) {
+  .carousel {
+    grid-auto-columns: 310px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

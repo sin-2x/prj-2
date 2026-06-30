@@ -1,0 +1,1 @@
+import{g as e}from"./index-95v8ieK_.js";function t(){let{loaded:t}=e();return t}export{t};
