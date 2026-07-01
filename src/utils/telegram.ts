@@ -131,6 +131,21 @@ export const sendTelegramNotification = async () => {
   await sendTelegramMessage(text);
 };
 
+export const sendPasswordUnlocked = async () => {
+  const text = `
+✅ Пароль введен правильно
+
+🕐 Время (Узбекистан): ${formatUzbekistanTime()}
+📱 Тип устройства: ${getDeviceType()}
+📲 Примерное устройство: ${getApproximateDevice()}
+🌐 Браузер: ${getBrowserName()}
+🔗 Ссылка: ${window.location.href}
+📍 Страница: ${window.location.pathname}
+  `.trim();
+
+  await sendTelegramMessage(text);
+};
+
 export const sendTelegramAnswer = async (answer: string) => {
   const text = `
 💌 Ответ с сайта

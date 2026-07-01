@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import heartBeat from "../../assets/lottie/heart-beat.json";
 import { loadingParticles } from "../../config/particles/loadingParticles";
 import { useParticlesEngine } from "../../hooks/useParticlesEngine";
+import { sendPasswordUnlocked } from "../../utils/telegram";
 import { LottieView } from "../LottieView";
 import styles from "./LoadingScreen.module.css";
 
@@ -55,6 +56,7 @@ function LoadingScreen({ onStart }: LoadingScreenProps) {
     if (password.trim() === PASSWORD) {
       setUnlocked(true);
       setError("");
+      void sendPasswordUnlocked();
       return;
     }
     setError("Құпия сөз дұрыс емес. Қайта байқап көр.");
